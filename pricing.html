@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="コンテンツページ生成ちゃんの価格表。月額9,800円（税抜）の単一プラン、月額／年払い切替、提供機能、初期費用、API利用料、支払方法、解約条件を掲載。">
+<title>価格表｜コンテンツページ生成ちゃん 審査用ドキュメント</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="./index.html" class="site-logo">
+      <span class="logo-mark">CPG</span>
+      <span class="logo-text">コンテンツページ生成ちゃん<small>審査資料</small></span>
+    </a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="./index.html">概要</a>
+      <a href="./features.html">機能一覧</a>
+      <a href="./architecture.html">構成図</a>
+      <a href="./pricing.html" aria-current="page">価格表</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============== ヘッダー＋価格切替＋プランカード ============== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">03 / PRICING</span>
+        <h1 class="section-title">価格表</h1>
+        <p class="section-lead">すべての機能を1つのプランで提供する、シンプルな単一プラン構成です。月額／年払いをお選びいただけます。</p>
+      </div>
+
+      <div class="pricing-toggle-wrap">
+        <div class="pricing-toggle" role="tablist" aria-label="支払サイクル">
+          <button class="pricing-toggle__btn is-active" role="tab" aria-selected="true" data-cycle="monthly">
+            月額
+          </button>
+          <button class="pricing-toggle__btn" role="tab" aria-selected="false" data-cycle="yearly">
+            年払い
+          </button>
+        </div>
+      </div>
+
+      <article class="pricing-card fade-in">
+        <span class="pricing-badge">すべての機能を提供</span>
+        <p class="pricing-plan-name">スタンダードプラン</p>
+
+        <div class="pricing-card__price" data-cycle-display>
+          <!-- 月額表示時 -->
+          <div data-cycle-content="monthly">
+            <span class="price-prefix">¥</span><span class="price-amount">9,800</span>
+            <span class="price-unit">/ 月（税抜）</span>
+            <p class="price-tax-inclusive">税込 10,780円 / 月</p>
+          </div>
+          <!-- 年払い表示時 -->
+          <div data-cycle-content="yearly" hidden>
+            <span class="price-prefix">¥</span><span class="price-amount">117,600</span>
+            <span class="price-unit">/ 年（税抜）</span>
+            <p class="price-tax-inclusive">税込 129,360円 / 年</p>
+            <p class="price-note">※ 月額×12ヶ月分（割引なし）</p>
+          </div>
+        </div>
+
+        <ul class="pricing-feature-list">
+          <li>月間50ページ生成可能</li>
+          <li>AI文章生成（説明文・キャッチ・訴求文）</li>
+          <li>AI画像生成（商品イメージ・背景）</li>
+          <li>AI翻訳（多言語対応）</li>
+          <li>楽天ShopPage API / RMS API 連携</li>
+          <li>マスタ管理・生成履歴12ヶ月保存</li>
+          <li>メール＋チャットサポート（営業日24時間以内回答）</li>
+          <li>初期操作レクチャー 1時間オンライン</li>
+        </ul>
+
+        <p class="pricing-target">
+          推奨対象：中小EC事業者全般（月商500万円以下を主対象）
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== 提供機能（全機能表） ============== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">FULL SCOPE</span>
+        <h2 class="section-title">提供機能（フル機能提供）</h2>
+        <p class="section-lead">単一プランで以下のすべての機能を提供します。</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>機能カテゴリ</th>
+              <th>提供内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>月間生成可能ページ数</strong></td>
+              <td>50ページ / 月</td>
+            </tr>
+            <tr>
+              <td>AI文章生成（商品説明・キャッチコピー・特徴訴求文）</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>AI画像生成（商品イメージ・背景画像）</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>AI翻訳（英語・中国語ほか多言語）</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>楽天ShopPage API 自動アップロード</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>楽天RMS API 連携</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>プロンプトテンプレート（標準＋カスタム）</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>生成履歴保存</td>
+              <td>12ヶ月</td>
+            </tr>
+            <tr>
+              <td>マスタ管理（ユーザー・商品ジャンル・テンプレート・店舗・履歴）</td>
+              <td class="col-yes">✓</td>
+            </tr>
+            <tr>
+              <td>サポート</td>
+              <td>メール＋チャット（営業日24時間以内回答）</td>
+            </tr>
+            <tr>
+              <td>初期操作レクチャー</td>
+              <td>1時間オンライン</td>
+            </tr>
+            <tr>
+              <td>推奨対象</td>
+              <td>中小EC事業者全般（月商500万円以下を主対象）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== その他条件 ============== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">TERMS</span>
+        <h2 class="section-title">その他のご利用条件</h2>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card fade-in">
+          <h4>
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            初期費用
+          </h4>
+          <p>初期費用なし。アカウント発行のみで利用開始可能です。</p>
+        </div>
+
+        <div class="info-card fade-in">
+          <h4>
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            API利用料
+          </h4>
+          <p>外部AIサービス・楽天API等の利用料は実費としてお客様にてご負担いただきます。本サービス料金には含まれません。一般的な利用想定では月額数千円〜1万円程度となります。</p>
+        </div>
+
+        <div class="info-card fade-in">
+          <h4>
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            支払方法
+          </h4>
+          <p>クレジットカード決済（月額・年払いとも対応）、または銀行振込（年払いのみ）。</p>
+        </div>
+
+        <div class="info-card fade-in">
+          <h4>
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            解約条件
+          </h4>
+          <p>月額プランは翌月末日付で解約可能。年払いプランは契約期間満了時に自動更新（更新前にご連絡で停止可能）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-company">
+      <strong>株式会社GSD（銀座東京フラワー）</strong><br>
+      製品紹介: <a href="https://ginzasugiden.com/contents-page-generator/" target="_blank" rel="noopener" class="ext">ginzasugiden.com/contents-page-generator/</a>
+    </p>
+    <p class="footer-meta">
+      本サイトはIT導入補助金 ITツール審査用の資料です。<br>
+      © 2026 株式会社GSD. 最終更新日: <time datetime="2026-05-11">2026年5月11日</time>
+    </p>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js" defer></script>
+</body>
+</html>

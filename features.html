@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="コンテンツページ生成ちゃんの機能一覧。AI文章生成・AI画像生成・AI翻訳・楽天API連携を統合した、楽天市場向けコンテンツページ自動生成SaaSの全機能を掲載。">
+<title>機能一覧｜コンテンツページ生成ちゃん 審査用ドキュメント</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="./index.html" class="site-logo">
+      <span class="logo-mark">CPG</span>
+      <span class="logo-text">コンテンツページ生成ちゃん<small>審査資料</small></span>
+    </a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="./index.html">概要</a>
+      <a href="./features.html" aria-current="page">機能一覧</a>
+      <a href="./architecture.html">構成図</a>
+      <a href="./pricing.html">価格表</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">01 / FEATURES</span>
+        <h1 class="section-title">機能一覧</h1>
+        <p class="section-lead">「広報・販売促進」「業種固有プロセス（EC）」「データ管理」の各プロセスに対応する全機能を、A〜Eの5カテゴリで整理しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 機能一覧表 ============== -->
+  <section class="section section--alt" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="cat-title">(A) コンテンツ生成機能</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th style="width: 80px;">ID</th><th>機能名</th><th>概要</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>A-1</td><td>商品説明文 AI自動生成</td><td>商品情報からAI文章生成により、楽天市場向け商品説明文を自動生成します。</td></tr>
+            <tr><td>A-2</td><td>キャッチコピー AI自動生成</td><td>訴求コンセプトに基づき、購買意欲を喚起するキャッチコピーをAI文章生成で複数案出力します。</td></tr>
+            <tr><td>A-3</td><td>商品特徴訴求文 AI生成</td><td>商品の差別化ポイントを構造化し、ベネフィット訴求文を自動生成します。</td></tr>
+            <tr><td>A-4</td><td>商品イメージ画像 AI生成</td><td>AI画像生成により、商品コンセプト・季節性を反映した商品イメージ画像を生成します。</td></tr>
+            <tr><td>A-5</td><td>背景画像 AI生成</td><td>AI画像生成により、コンテンツページ用の背景・装飾画像を生成します。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="cat-title">(B) 多言語対応機能</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th style="width: 80px;">ID</th><th>機能名</th><th>概要</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>B-1</td><td>英語 AI翻訳</td><td>生成済みコンテンツをAI翻訳により英語へ自動翻訳します。</td></tr>
+            <tr><td>B-2</td><td>中国語（簡体・繁体）AI翻訳</td><td>中国語簡体字・繁体字へのAI翻訳に対応します。</td></tr>
+            <tr><td>B-3</td><td>その他主要言語 AI翻訳</td><td>韓国語・タイ語等、主要アジア言語へのAI翻訳に対応します。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="cat-title">(C) ECモール連携機能</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th style="width: 80px;">ID</th><th>機能名</th><th>概要</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>C-1</td><td>楽天ShopPage API連携によるページ自動アップロード</td><td>生成したコンテンツページを楽天ShopPage APIで自動アップロードします。</td></tr>
+            <tr><td>C-2</td><td>楽天RMS API連携によるショップ情報取得</td><td>楽天RMS APIから店舗情報・商品情報を取得し、ページ生成に反映します。</td></tr>
+            <tr><td>C-3</td><td>生成済みページの公開・差し替え管理</td><td>公開済みページの履歴管理、差し替え、ロールバックを行います。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="cat-title">(D) 業務管理機能</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th style="width: 80px;">ID</th><th>機能名</th><th>概要</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>D-1</td><td>ユーザーマスタ管理</td><td>利用ユーザーのアカウント・権限を管理します。</td></tr>
+            <tr><td>D-2</td><td>商品ジャンルマスタ管理</td><td>取扱商品ジャンルごとに最適化されたテンプレート・プロンプトを管理します。</td></tr>
+            <tr><td>D-3</td><td>プロンプトテンプレートマスタ管理</td><td>標準テンプレート＋カスタムテンプレートを保存・再利用します。</td></tr>
+            <tr><td>D-4</td><td>楽天店舗マスタ管理</td><td>連携先の楽天店舗情報・APIキーを安全に管理します。</td></tr>
+            <tr><td>D-5</td><td>生成履歴マスタ管理</td><td>過去12ヶ月の生成履歴を保存し、再利用・再生成・監査に活用します。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="cat-title">(E) サポート・運用機能</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th style="width: 80px;">ID</th><th>機能名</th><th>概要</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>E-1</td><td>操作レクチャー（オンライン1時間）</td><td>導入初期にオンラインで1時間の操作レクチャーを提供します。</td></tr>
+            <tr><td>E-2</td><td>初期設定支援</td><td>店舗マスタ・テンプレートマスタ等の初期設定をサポートします。</td></tr>
+            <tr><td>E-3</td><td>APIキー設定代行</td><td>楽天API等の連携キー設定を代行します。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== プロセス対応表 ============== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">PROCESS MAPPING</span>
+        <h2 class="section-title">業務プロセス対応表</h2>
+        <p class="section-lead">IT導入補助金のプロセス分類と、本製品の機能の対応関係です。</p>
+      </div>
+
+      <div class="process-map">
+        <div class="process-row fade-in">
+          <div class="lbl">広報、販売促進</div>
+          <div class="ids">
+            <span>A-1</span><span>A-2</span><span>A-3</span><span>A-4</span><span>A-5</span>
+            <span>B-1</span><span>B-2</span><span>B-3</span>
+          </div>
+        </div>
+        <div class="process-row fade-in">
+          <div class="lbl">業種固有プロセス（EC事業）</div>
+          <div class="ids">
+            <span>C-1</span><span>C-2</span><span>C-3</span>
+          </div>
+        </div>
+        <div class="process-row fade-in">
+          <div class="lbl">データ管理</div>
+          <div class="ids">
+            <span>D-1</span><span>D-2</span><span>D-3</span><span>D-4</span><span>D-5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 各機能の詳細 ============== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">DETAILS</span>
+        <h2 class="section-title">各機能の詳細</h2>
+        <p class="section-lead">主要機能について「概要 / 入力 / 処理 / 出力 / 期待効果」を掲載しています。</p>
+      </div>
+
+      <!-- A-1 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">A-1</span>商品説明文 AI自動生成</h4>
+        <dl>
+          <dt>概要</dt><dd>商品ジャンル・特徴・訴求軸を入力し、AI文章生成で楽天市場向け商品説明文を自動生成。</dd>
+          <dt>入力</dt><dd>商品名、商品ジャンル、訴求コンセプト、特徴、サイズ／素材／成分等の構造化情報</dd>
+          <dt>処理</dt><dd>AI文章生成エンジンへプロンプトを送信、ターゲット読者・媒体特性に応じた説明文を取得</dd>
+          <dt>出力</dt><dd>楽天市場のページ仕様に最適化された商品説明文（HTML対応／文字数調整可）</dd>
+          <dt>期待効果</dt><dd>外注ライター不要、1ページ数千字の説明文を数分で取得、季節商品にも迅速対応</dd>
+        </dl>
+      </article>
+
+      <!-- A-2 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">A-2</span>キャッチコピー AI自動生成</h4>
+        <dl>
+          <dt>概要</dt><dd>AI文章生成により、感性訴求・機能訴求・価格訴求など複数パターンのキャッチコピーを出力。</dd>
+          <dt>入力</dt><dd>商品名、訴求軸、ターゲット属性、トーン＆マナー指定</dd>
+          <dt>処理</dt><dd>AI文章生成エンジンで複数案を生成、視認性・購買誘導性を考慮したコピーを取得</dd>
+          <dt>出力</dt><dd>キャッチコピー候補（複数案）、文字数バリエーション</dd>
+          <dt>期待効果</dt><dd>A/Bテスト用の複数案を即時確保、コピーライター費用の大幅削減</dd>
+        </dl>
+      </article>
+
+      <!-- A-3 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">A-3</span>商品特徴訴求文 AI生成</h4>
+        <dl>
+          <dt>概要</dt><dd>商品の差別化ポイントを構造化し、AI文章生成で訴求文（ベネフィット訴求）を作成。</dd>
+          <dt>入力</dt><dd>商品スペック、競合との差別化要素、想定ユースケース</dd>
+          <dt>処理</dt><dd>機能訴求からベネフィット訴求への変換をAI文章生成で実施</dd>
+          <dt>出力</dt><dd>段落構造化された訴求文、箇条書きハイライト</dd>
+          <dt>期待効果</dt><dd>「特長を顧客メリットに翻訳する」工程が自動化され、説得力の高いページを安定生成</dd>
+        </dl>
+      </article>
+
+      <!-- A-4 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">A-4</span>商品イメージ画像 AI生成</h4>
+        <dl>
+          <dt>概要</dt><dd>最新のAI画像生成技術を用い、商品の特徴・コンセプト・季節性を反映した商品イメージ画像・背景画像を自動生成。</dd>
+          <dt>入力</dt><dd>商品ジャンル、訴求コンセプト、季節、テイスト指定、参照画像（任意）</dd>
+          <dt>処理</dt><dd>AI画像生成エンジンへプロンプトを送信、生成画像を取得</dd>
+          <dt>出力</dt><dd>高解像度画像、楽天市場のページ仕様に最適化したサイズで出力</dd>
+          <dt>期待効果</dt><dd>商品撮影が困難な季節商品・コンセプト商品でも高品質ビジュアル素材を即時確保</dd>
+        </dl>
+      </article>
+
+      <!-- A-5 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">A-5</span>背景画像 AI生成</h4>
+        <dl>
+          <dt>概要</dt><dd>コンテンツページ装飾用の背景・テクスチャ画像をAI画像生成で作成。</dd>
+          <dt>入力</dt><dd>色味、テイスト、季節モチーフ、ブランドトーン指定</dd>
+          <dt>処理</dt><dd>AI画像生成エンジンによる背景画像生成</dd>
+          <dt>出力</dt><dd>大判背景画像、シームレスタイル化対応</dd>
+          <dt>期待効果</dt><dd>ストック素材購入が不要、ブランド世界観の統一が容易</dd>
+        </dl>
+      </article>
+
+      <!-- B-1 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">B-1</span>英語 AI翻訳</h4>
+        <dl>
+          <dt>概要</dt><dd>生成済みコンテンツをAI翻訳により英語へ自動翻訳。インバウンド・越境ECに対応。</dd>
+          <dt>入力</dt><dd>日本語の商品説明・キャッチコピー</dd>
+          <dt>処理</dt><dd>AI翻訳エンジンに送信、商品文脈に応じた英訳を取得</dd>
+          <dt>出力</dt><dd>英語版コンテンツ（用語統一・トーン保持）</dd>
+          <dt>期待効果</dt><dd>翻訳外注費削減、越境EC対応スピード向上</dd>
+        </dl>
+      </article>
+
+      <!-- B-2 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">B-2</span>中国語（簡体・繁体）AI翻訳</h4>
+        <dl>
+          <dt>概要</dt><dd>中国本土向け簡体字・台湾／香港向け繁体字へのAI翻訳に対応。</dd>
+          <dt>入力</dt><dd>日本語コンテンツ＋翻訳先指定（簡体／繁体）</dd>
+          <dt>処理</dt><dd>地域差を踏まえたAI翻訳を実行</dd>
+          <dt>出力</dt><dd>簡体／繁体それぞれの中国語版コンテンツ</dd>
+          <dt>期待効果</dt><dd>中華圏EC市場へ低コストで展開可能</dd>
+        </dl>
+      </article>
+
+      <!-- C-1 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">C-1</span>楽天ShopPage API連携</h4>
+        <dl>
+          <dt>概要</dt><dd>生成済みのコンテンツページを楽天ShopPage APIで自動アップロード・公開反映。</dd>
+          <dt>入力</dt><dd>生成済みページHTML、対象店舗ID、ページ識別子</dd>
+          <dt>処理</dt><dd>楽天ShopPage API へHTTPSでリクエスト送信、結果ステータス受領</dd>
+          <dt>出力</dt><dd>公開ステータス、エラー時のエラーメッセージ</dd>
+          <dt>期待効果</dt><dd>手作業アップロードが不要、ページ公開までのリードタイム短縮</dd>
+        </dl>
+      </article>
+
+      <!-- C-2 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">C-2</span>楽天RMS API連携</h4>
+        <dl>
+          <dt>概要</dt><dd>楽天RMS APIから店舗情報・商品情報を取得し、ページ生成元データとして活用。</dd>
+          <dt>入力</dt><dd>RMS APIキー、取得対象（商品マスタ・カテゴリ等）</dd>
+          <dt>処理</dt><dd>RMS APIから店舗情報を取得、AI生成プロセスに連携</dd>
+          <dt>出力</dt><dd>取得した店舗・商品マスタ情報の構造化データ</dd>
+          <dt>期待効果</dt><dd>店舗データの二重入力不要、最新の商品データに基づくページ生成</dd>
+        </dl>
+      </article>
+
+      <!-- D-5 -->
+      <article class="feature-detail fade-in">
+        <h4><span class="id-badge">D-5</span>生成履歴マスタ管理</h4>
+        <dl>
+          <dt>概要</dt><dd>過去12ヶ月の生成履歴を保存。再利用・再生成・監査・差し戻しに対応。</dd>
+          <dt>入力</dt><dd>—（自動記録）</dd>
+          <dt>処理</dt><dd>各生成タスクのプロンプト・パラメータ・出力結果・公開ステータスを保存</dd>
+          <dt>出力</dt><dd>履歴一覧（検索／絞り込み可）</dd>
+          <dt>期待効果</dt><dd>過去施策の振り返り、ベストプラクティスの再利用、内部監査対応</dd>
+        </dl>
+      </article>
+
+      <p style="font-size: 0.88rem; color: var(--color-text-subtle); text-align: center; margin-top: 1.5rem;">
+        ※ 上記は主要機能の抜粋です。全機能の詳細は実機にて確認可能です。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-company">
+      <strong>株式会社GSD（銀座東京フラワー）</strong><br>
+      製品紹介: <a href="https://ginzasugiden.com/contents-page-generator/" target="_blank" rel="noopener" class="ext">ginzasugiden.com/contents-page-generator/</a>
+    </p>
+    <p class="footer-meta">
+      本サイトはIT導入補助金 ITツール審査用の資料です。<br>
+      © 2026 株式会社GSD. 最終更新日: <time datetime="2026-05-11">2026年5月11日</time>
+    </p>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js" defer></script>
+</body>
+</html>

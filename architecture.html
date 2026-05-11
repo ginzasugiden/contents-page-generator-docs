@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="コンテンツページ生成ちゃんの機能構成図。ユーザー〜フロントエンド〜バックエンド〜外部AI／楽天API〜マスタDBの全体構成、データフロー、セキュリティ対策を掲載。">
+<title>機能構成図｜コンテンツページ生成ちゃん 審査用ドキュメント</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="./index.html" class="site-logo">
+      <span class="logo-mark">CPG</span>
+      <span class="logo-text">コンテンツページ生成ちゃん<small>審査資料</small></span>
+    </a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="./index.html">概要</a>
+      <a href="./features.html">機能一覧</a>
+      <a href="./architecture.html" aria-current="page">構成図</a>
+      <a href="./pricing.html">価格表</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">02 / ARCHITECTURE</span>
+        <h1 class="section-title">機能構成図</h1>
+        <p class="section-lead">ユーザーの操作から、フロントエンド・バックエンド、外部AI／楽天API、マスタDBに至るシステム全体の構成です。</p>
+      </div>
+
+      <figure class="arch-figure fade-in">
+        <svg viewBox="0 0 1000 720" role="img" aria-label="システム機能構成図" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gradAccent" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#4F46E5"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
+            </linearGradient>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+            </marker>
+            <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#4F46E5"/>
+            </marker>
+            <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.10"/>
+            </filter>
+          </defs>
+
+          <style>
+            .lbl { font-family: 'Plus Jakarta Sans','Noto Sans JP',sans-serif; font-weight: 700; fill: #0F172A; }
+            .lbl-sub { font-family: 'Plus Jakarta Sans','Noto Sans JP',sans-serif; font-weight: 500; fill: #475569; font-size: 12px; }
+            .lbl-white { fill: #ffffff; font-family: 'Plus Jakarta Sans','Noto Sans JP',sans-serif; font-weight: 700; }
+            .edge { stroke: #475569; stroke-width: 1.6; fill: none; }
+            .edge-accent { stroke: #4F46E5; stroke-width: 2; fill: none; }
+            .edge-label { font-family: 'Plus Jakarta Sans','Noto Sans JP',sans-serif; font-size: 11px; fill: #64748B; }
+            .bg-user { fill: #F1F5F9; stroke: #CBD5E1; }
+            .bg-front { fill: #ffffff; stroke: #E2E8F0; }
+            .bg-back { fill: #ffffff; stroke: #E2E8F0; }
+            .bg-ext { fill: #EEF2FF; stroke: #C7D2FE; }
+            .bg-db { fill: #ffffff; stroke: #E2E8F0; }
+          </style>
+
+          <!-- (1) USER -->
+          <g filter="url(#shadow)">
+            <rect class="bg-user" x="380" y="20" width="240" height="64" rx="12"/>
+          </g>
+          <text x="500" y="48" class="lbl" font-size="15" text-anchor="middle">ユーザー（EC事業者）</text>
+          <text x="500" y="68" class="lbl-sub" text-anchor="middle">ブラウザ（Chrome / Edge / Safari）</text>
+
+          <!-- Arrow user → frontend -->
+          <line class="edge" x1="500" y1="86" x2="500" y2="126" marker-end="url(#arrow)"/>
+          <text x="514" y="110" class="edge-label">HTTPS</text>
+
+          <!-- (2) FRONTEND -->
+          <g filter="url(#shadow)">
+            <rect class="bg-front" x="300" y="130" width="400" height="72" rx="12"/>
+          </g>
+          <rect x="300" y="130" width="6" height="72" rx="3" fill="url(#gradAccent)"/>
+          <text x="500" y="160" class="lbl" font-size="15" text-anchor="middle">コンテンツページ生成ちゃん フロントエンド</text>
+          <text x="500" y="182" class="lbl-sub" text-anchor="middle">UI / 入力フォーム / プレビュー / マスタ管理画面</text>
+
+          <!-- Arrow frontend → backend -->
+          <line class="edge" x1="500" y1="204" x2="500" y2="244" marker-end="url(#arrow)"/>
+          <text x="514" y="228" class="edge-label">REST API / HTTPS</text>
+
+          <!-- (3) BACKEND -->
+          <g filter="url(#shadow)">
+            <rect class="bg-back" x="280" y="248" width="440" height="80" rx="12"/>
+          </g>
+          <rect x="280" y="248" width="6" height="80" rx="3" fill="url(#gradAccent)"/>
+          <text x="500" y="280" class="lbl" font-size="15" text-anchor="middle">コンテンツページ生成ちゃん バックエンド</text>
+          <text x="500" y="302" class="lbl-sub" text-anchor="middle">API ゲートウェイ / 認証 / プロンプト管理 / ジョブキュー / 履歴記録</text>
+
+          <!-- Edges to external services (fan-out) -->
+          <!-- left column: AI text, AI image, AI translate -->
+          <!-- backend bottom anchor y=328 -->
+          <path class="edge-accent" d="M 360 328 C 360 380, 180 380, 180 420" marker-end="url(#arrow-accent)"/>
+          <path class="edge-accent" d="M 440 328 C 440 380, 380 380, 380 420" marker-end="url(#arrow-accent)"/>
+          <path class="edge-accent" d="M 560 328 C 560 380, 620 380, 620 420" marker-end="url(#arrow-accent)"/>
+          <path class="edge-accent" d="M 640 328 C 640 380, 820 380, 820 420" marker-end="url(#arrow-accent)"/>
+
+          <!-- (4) External services row -->
+          <!-- AI 文章 -->
+          <g filter="url(#shadow)">
+            <rect class="bg-ext" x="80" y="420" width="200" height="70" rx="12"/>
+          </g>
+          <text x="180" y="450" class="lbl" font-size="14" text-anchor="middle">AI文章生成エンジン</text>
+          <text x="180" y="470" class="lbl-sub" text-anchor="middle">商品説明・キャッチコピー生成</text>
+
+          <!-- AI 画像 -->
+          <g filter="url(#shadow)">
+            <rect class="bg-ext" x="280" y="420" width="200" height="70" rx="12"/>
+          </g>
+          <text x="380" y="450" class="lbl" font-size="14" text-anchor="middle">AI画像生成エンジン</text>
+          <text x="380" y="470" class="lbl-sub" text-anchor="middle">商品イメージ・背景画像生成</text>
+
+          <!-- AI 翻訳 -->
+          <g filter="url(#shadow)">
+            <rect class="bg-ext" x="520" y="420" width="200" height="70" rx="12"/>
+          </g>
+          <text x="620" y="450" class="lbl" font-size="14" text-anchor="middle">AI翻訳エンジン</text>
+          <text x="620" y="470" class="lbl-sub" text-anchor="middle">多言語翻訳（英・中・他）</text>
+
+          <!-- 楽天 API -->
+          <g filter="url(#shadow)">
+            <rect class="bg-ext" x="720" y="420" width="200" height="70" rx="12"/>
+          </g>
+          <text x="820" y="450" class="lbl" font-size="14" text-anchor="middle">楽天 ShopPage / RMS API</text>
+          <text x="820" y="470" class="lbl-sub" text-anchor="middle">ページ公開・店舗情報取得</text>
+
+          <!-- Arrow backend → DB -->
+          <line class="edge" x1="500" y1="328" x2="500" y2="540" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
+          <text x="514" y="420" class="edge-label">永続化</text>
+
+          <!-- (5) MASTER DB -->
+          <g filter="url(#shadow)">
+            <rect class="bg-db" x="240" y="545" width="520" height="150" rx="12"/>
+          </g>
+          <rect x="240" y="545" width="6" height="150" rx="3" fill="url(#gradAccent)"/>
+          <text x="500" y="572" class="lbl" font-size="15" text-anchor="middle">マスタDB</text>
+
+          <!-- 5 master items in two rows -->
+          <g class="lbl-sub" font-size="12">
+            <rect x="266" y="590" width="140" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <text x="336" y="613" text-anchor="middle">ユーザーマスタ</text>
+
+            <rect x="416" y="590" width="160" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <text x="496" y="613" text-anchor="middle">商品ジャンルマスタ</text>
+
+            <rect x="586" y="590" width="160" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <text x="666" y="613" text-anchor="middle">プロンプトテンプレート</text>
+
+            <rect x="266" y="636" width="200" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <text x="366" y="659" text-anchor="middle">楽天店舗マスタ</text>
+
+            <rect x="476" y="636" width="270" height="36" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+            <text x="611" y="659" text-anchor="middle">生成履歴マスタ（12ヶ月保存）</text>
+          </g>
+        </svg>
+
+        <div class="arch-legend">
+          <span><i style="background:#F1F5F9; border:1px solid #CBD5E1;"></i>ユーザー</span>
+          <span><i style="background:#fff; border:1px solid #E2E8F0;"></i>自社システム（フロント／バック）</span>
+          <span><i style="background:#EEF2FF; border:1px solid #C7D2FE;"></i>外部API（AI／楽天）</span>
+          <span><i style="background:#fff; border:1px solid #E2E8F0;"></i>マスタDB</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== データフロー説明 ============== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">DATA FLOW</span>
+        <h2 class="section-title">データフロー</h2>
+        <p class="section-lead">商品情報の入力からコンテンツページの公開までの主要ステップです。</p>
+      </div>
+
+      <ol class="flow-list">
+        <li>ユーザーがブラウザ経由でフロントエンドにログインし、商品情報・訴求コンセプトを入力する。</li>
+        <li>フロントエンドはREST API経由でバックエンドに生成リクエストを送信する。</li>
+        <li>バックエンドは商品ジャンルマスタ・プロンプトテンプレートマスタを参照し、最適なプロンプトを構築する。</li>
+        <li>バックエンドは <strong>AI文章生成エンジン</strong> に説明文・キャッチコピー生成を依頼する。</li>
+        <li>バックエンドは <strong>AI画像生成エンジン</strong> に商品イメージ画像・背景画像の生成を依頼する。</li>
+        <li>必要に応じて <strong>AI翻訳エンジン</strong> で多言語版を生成する。</li>
+        <li>生成結果をマスタDBの生成履歴に保存し、フロントエンドにプレビューを返す。</li>
+        <li>ユーザーが承認すると、<strong>楽天ShopPage API</strong> 経由で楽天市場へページを自動アップロード・公開する。</li>
+        <li>公開ステータス・差し替え履歴を生成履歴マスタに記録する（12ヶ月保存）。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============== セキュリティ対策 ============== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">SECURITY</span>
+        <h2 class="section-title">セキュリティ対策</h2>
+      </div>
+
+      <div class="card-grid">
+        <div class="card fade-in">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            通信の暗号化
+          </h3>
+          <p>ユーザー〜サーバー、サーバー〜外部API間のすべての通信を HTTPS / TLS で暗号化します。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            APIキー暗号化保管
+          </h3>
+          <p>楽天API等の外部連携キーは暗号化してマスタDBに保管。復号は実行時のみ、最小権限で行います。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 5h18M3 12h18M3 19h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            アクセスログ管理
+          </h3>
+          <p>ログイン・生成・公開操作のアクセスログを記録し、不正アクセス・誤操作の追跡に活用します。</p>
+        </div>
+        <div class="card fade-in">
+          <h3 class="card-title">
+            <span class="card-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            AI生成画像のウォーターマーク
+          </h3>
+          <p>AI画像生成で出力した画像にウォーターマーク／メタデータを付与し、生成物の出所を明示します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 推奨動作環境 ============== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">REQUIREMENTS</span>
+        <h2 class="section-title">推奨動作環境</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row" style="width: 220px;">対応ブラウザ</th>
+              <td>Google Chrome / Microsoft Edge / Safari の最新版</td>
+            </tr>
+            <tr>
+              <th scope="row">回線</th>
+              <td>常時インターネット接続（クラウド型のため）</td>
+            </tr>
+            <tr>
+              <th scope="row">推奨解像度</th>
+              <td>1280×800 以上（モバイル閲覧にも対応）</td>
+            </tr>
+            <tr>
+              <th scope="row">クライアント側ソフトウェア</th>
+              <td>不要（ブラウザのみで完結）</td>
+            </tr>
+            <tr>
+              <th scope="row">サーバー側</th>
+              <td>クラウド環境にて提供（ユーザーによるサーバー構築・運用不要）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-company">
+      <strong>株式会社GSD（銀座東京フラワー）</strong><br>
+      製品紹介: <a href="https://ginzasugiden.com/contents-page-generator/" target="_blank" rel="noopener" class="ext">ginzasugiden.com/contents-page-generator/</a>
+    </p>
+    <p class="footer-meta">
+      本サイトはIT導入補助金 ITツール審査用の資料です。<br>
+      © 2026 株式会社GSD. 最終更新日: <time datetime="2026-05-11">2026年5月11日</time>
+    </p>
+  </div>
+</footer>
+
+<script src="./assets/js/main.js" defer></script>
+</body>
+</html>
