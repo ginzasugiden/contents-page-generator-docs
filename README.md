@@ -24,7 +24,7 @@ contents-page-generator-docs/
 
 - **製品名**: コンテンツページ生成ちゃん
 - **提供形態**: クラウド型SaaS
-- **提供事業者**: 株式会社GSD（銀座東京フラワー）
+- **提供事業者**: 株式会社GSD
 - **製品紹介URL**: https://ginzasugiden.com/contents-page-generator/
 - **用途**: 楽天市場向けコンテンツページの自動生成
 
